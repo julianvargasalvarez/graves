@@ -16,8 +16,8 @@ setInterval(function() {
   if(x + radius > width  || x - radius < 0) incrementX *= -1;
   if(y + radius > height || y - radius < 0) incrementY *= -1;
 
-  x += incrementX;
-  y += incrementY;
+  x += incrementX * 10;
+  y += incrementY * 10;
 
   context.fillStyle = '#CC2222';
   context.fillRect(0,   0, width, height);
