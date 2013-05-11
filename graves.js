@@ -1,6 +1,6 @@
 var canvas = document.getElementById("canvas");
-var width = parseInt(window.document.documentElement.clientWidth);
-var height = parseInt(window.document.documentElement.clientHeight);
+var width = parseInt(window.document.documentElement.clientWidth) / 2;
+var height = parseInt(window.document.documentElement.clientHeight) / 2;
 canvas.width = width;
 canvas.height = height;
 
