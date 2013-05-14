@@ -11,10 +11,13 @@ var y = height / 2;
 var radius = width * 5 / 100;
 var incrementX = 1;
 var incrementY = 1;
+var barPositionY = height * 0.9;
+var barHeight = height * 0.05;
+var barWidth = 2 * radius;
 
 setInterval(function() {
   if(x + radius > width  || x - radius < 0) incrementX *= -1;
-  if(y + radius > height || y - radius < 0) incrementY *= -1;
+  if(y + radius > barPositionY || y - radius < 0) incrementY *= -1;
 
   x += incrementX * 10;
   y += incrementY * 10;
@@ -29,5 +32,8 @@ setInterval(function() {
   context.lineWidth = 5;
   context.strokeStyle = '#003300';
   context.stroke();
+
+  context.fillStyle = '#FFFF00';
+  context.fillRect(x-radius, barPositionY, barWidth, barHeight);
 
 }, 0);
