@@ -1,8 +1,13 @@
-var canvas = document.getElementById("canvas");
+var canvas = document.createElement("canvas");
+
+canvas.setAttribute('id', 'canvas');
+
 var width = parseInt(window.document.documentElement.clientWidth) / 2;
 var height = parseInt(window.document.documentElement.clientHeight) / 2;
 canvas.width = width;
 canvas.height = height;
+
+document.body.appendChild(canvas);
 
 var context = canvas.getContext('2d');
 
@@ -27,13 +32,11 @@ setInterval(function() {
 
   context.beginPath();
   context.arc(x, y, radius, 0, 2 * Math.PI, false);
-  context.fillStyle = 'green';
+  context.fillStyle = 'blue';
   context.fill();
   context.lineWidth = 5;
   context.strokeStyle = '#003300';
   context.stroke();
 
-  context.fillStyle = '#FFFF00';
-  context.fillRect(x-radius, barPositionY, barWidth, barHeight);
 
 }, 0);

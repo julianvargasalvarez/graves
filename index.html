@@ -4,8 +4,25 @@
     <title>The graves super game</title>
   </head>
   <body>
-    <canvas id="canvas">
-    </canvas>
   </body>
-  <script src="graves.js"></script>
+  <script>
+    setInterval(function() {
+      var the_old_canvas = document.getElementById('canvas');
+      if(the_old_canvas) {
+        the_old_canvas.remove();
+      }
+
+      var the_old = document.getElementById('graves');
+      if(the_old) {
+        the_old.remove();
+      }
+
+      var graves = document.createElement("script");
+      graves.setAttribute("src", "graves.js");
+      graves.setAttribute("id", "graves");
+
+      document.body.appendChild(graves);
+      console.log('he');
+    }, 2000);
+  </script>
 </html>
